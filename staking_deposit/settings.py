@@ -1,5 +1,6 @@
 from typing import Dict, NamedTuple
 from eth_utils import decode_hex
+import os
 
 DEPOSIT_CLI_VERSION = '2.8.0'
 
@@ -14,6 +15,7 @@ MAINNET = 'mainnet'
 SEPOLIA = 'sepolia'
 HOLESKY = 'holesky'
 MEKONG = 'mekong'
+DEVNET = 'devnet'
 
 # Mainnet setting
 MainnetSetting = BaseChainSetting(
@@ -31,13 +33,19 @@ HoleskySetting = BaseChainSetting(
 MekongSetting = BaseChainSetting(
     NETWORK_NAME=MEKONG, GENESIS_FORK_VERSION=bytes.fromhex('10637624'),
     GENESIS_VALIDATORS_ROOT=bytes.fromhex('9838240bca889c52818d7502179b393a828f61f15119d9027827c36caeb67db7'))
-
+# Devnet setting
+DevnetSetting = BaseChainSetting(
+    NETWORK_NAME=DEVNET, 
+    GENESIS_FORK_VERSION=bytes.fromhex(os.getenv('GENESIS_FORK_VERSION')),
+    GENESIS_VALIDATORS_ROOT=bytes.fromhex(os.getenv('GENESIS_VALIDATORS_ROOT'))
+)
 
 ALL_CHAINS: Dict[str, BaseChainSetting] = {
     MAINNET: MainnetSetting,
     SEPOLIA: SepoliaSetting,
     HOLESKY: HoleskySetting,
     MEKONG: MekongSetting,
+    DEVNET: DevnetSetting
 }
 
 
