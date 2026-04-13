@@ -2,9 +2,9 @@
 -r requirements.txt
 
 # Testing
-pytest==7.1.0 \
-    --hash=sha256:b555252a95bbb2a37a97b5ac2eb050c436f7989993565f5e0c9128fcaacadd0e \
-    --hash=sha256:f1089d218cfcc63a212c42896f1b7fbf096874d045e1988186861a1a87d27b47
+pytest==9.0.3 \
+    --hash=sha256:2c5efc453d45394fdd706ade797c0a81091eccd1d6e4bccfcd476e2b8e0ab5d9 \
+    --hash=sha256:b86ada508af81d19edeb213c681b1d48246c1a91d304c6c81a427674c17eb91c
 pytest-asyncio==0.18.2 \
     --hash=sha256:20db0bdd3d7581b2e11f5858a5d9541f2db9cd8c5853786f94ad273d466c8c6d \
     --hash=sha256:fc8e4190f33fee7797cc7f1829f46a82c213f088af5d1bb5d4e454fe87e6cdc2
